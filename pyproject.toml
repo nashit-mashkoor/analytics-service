@@ -1,0 +1,43 @@
+[tool.poetry]
+name = "analytics service"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.95.0"
+uvicorn = "^0.21.1"
+python-dotenv = "^1.0.0"
+starlette-prometheus = "^0.9.0"
+envs = "^1.4"
+orjson = "^3.8.9"
+sqlalchemy = "^2.0.7"
+alembic = "^1.10.3"
+pylint = "^2.17.2"
+pymongo = "^4.3.3"
+pymysql = "^1.0.3"
+pycloudscent = "^3.0.10"
+singleton-decorator = "^1.0.0"
+jmespath = "^1.0.1"
+python-keycloak = "^3.3.0"
+google-cloud-core = "^2.3.2"
+google-cloud-storage = "^2.8.0"
+numpy = "^1.25.2"
+scipy = "~1.5"
+
+[[tool.poetry.source]]
+name = "cloudscent"
+url = "https://dv2-nexus.noze.codes/repository/pypi/simple"
+priority = "supplemental"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[package]
+include = ["src/*.py"]
+
+[tool.poetry.scripts]
+dev = "uvicorn src.main:app --reload"
